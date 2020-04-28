@@ -29,5 +29,20 @@ public class UserRegistrationTest {
         boolean result1= validator.validateLasttName("Mo");
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void givenEmail_WhenValid_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result=validator.validateEmail("abc@bridgelabz.com");
+        Assert.assertTrue(true);
+    }
+
+    @Test
+    public void givenEmail_WhenNotValid_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result=validator.validateEmail("abc.@bridgelabz.com");
+        Assert.assertFalse(false);
+    }
 }
+
 
