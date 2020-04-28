@@ -45,16 +45,18 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenPassword_WhenValid_ShouldReturnTrue() {
+    public void givenMobileNumber_WhenValid_ShouldReturnTrue() {
         UserValidator validator = new UserValidator();
-        boolean result=validator.validatePassword("Shaik@123");
+        boolean result=validator.validateMobileNumber("91 8660424568");
         Assert.assertEquals(true,result);
     }
 
     @Test
-    public void givenPassword_WhenNotValid_ShouldReturnFalse() {
+    public void givenMobileNumber_WhenNotValid_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
-        boolean result1=validator.validatePassword("shaik123");
+        boolean result1=validator.validateMobileNumber("8660424568");
         Assert.assertEquals(true,result1);
     }
+
+
 }
