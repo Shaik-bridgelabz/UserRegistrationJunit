@@ -40,9 +40,7 @@ public class UserRegistrationTest {
     @Test
     public void givenEmail_WhenNotValid_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
-        boolean result=validator.validateEmail("abc.@bridgelabz.com");
+        boolean result1=validator.validateEmail("abc.@bridgelabz.com");
         Assert.assertFalse(false);
     }
 }
-
-
