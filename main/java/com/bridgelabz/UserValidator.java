@@ -8,7 +8,9 @@ public class UserValidator {
     private static final String LAST_NAME_PATTERN = "^[A-Z]{1}[a-z]{2,}";
     private static final String EMAIL_ADDRESS_PATTERN ="^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}+([.][a-zA-Z]{2})?$";
     private static final String MOBILE_NUMBER_PATTERN = "^[0-9]{2}[ ][0-9]{10}$";
-    private static final String PASSWORD_PATTERN = "[a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*";
+    private static final String PASSWORD_PATTERN1 = "[a-zA-Z0-9]{8,}";
+    private static final String PASSWORD_PATTERN2 = "[a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*";
+    private static final String PASSWORD_PATTERN3= "[a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*[0-9][a-zA-Z0-9]*";
     public boolean validateFirstName(String firstName)
     {
         Pattern pattern=Pattern.compile(FIRST_NAME_PATTERN);
@@ -33,9 +35,21 @@ public class UserValidator {
         return pattern.matcher(phone).matches();
     }
 
-    public boolean validatePassword(String password)
+    public boolean validatePassword1(String password)
     {
-        Pattern pattern=Pattern.compile(PASSWORD_PATTERN);
+        Pattern pattern=Pattern.compile(PASSWORD_PATTERN1);
+        return pattern.matcher(password).matches();
+    }
+
+    public boolean validatePassword2(String password)
+    {
+        Pattern pattern=Pattern.compile(PASSWORD_PATTERN2);
+        return pattern.matcher(password).matches();
+    }
+
+    public boolean validatePassword3(String password)
+    {
+        Pattern pattern=Pattern.compile(PASSWORD_PATTERN3);
         return pattern.matcher(password).matches();
     }
 }
