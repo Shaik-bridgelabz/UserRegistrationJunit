@@ -11,6 +11,7 @@ public class UserValidator {
     private static final String PASSWORD_PATTERN1 = "[a-zA-Z0-9]{8,}";
     private static final String PASSWORD_PATTERN2 = "[a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*";
     private static final String PASSWORD_PATTERN3= "[a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*[0-9][a-zA-Z0-9]*";
+    private static final String PASSWORD_PATTERN4= "[a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*[0-9][a-zA-Z0-9]*[@#$%&_-]{1}[a-zA-Z0-9]*";
     public boolean validateFirstName(String firstName)
     {
         Pattern pattern=Pattern.compile(FIRST_NAME_PATTERN);
@@ -50,6 +51,12 @@ public class UserValidator {
     public boolean validatePassword3(String password)
     {
         Pattern pattern=Pattern.compile(PASSWORD_PATTERN3);
+        return pattern.matcher(password).matches();
+    }
+
+    public boolean validatePassword4(String password)
+    {
+        Pattern pattern=Pattern.compile(PASSWORD_PATTERN4);
         return pattern.matcher(password).matches();
     }
 }
