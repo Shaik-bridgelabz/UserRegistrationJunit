@@ -8,17 +8,17 @@ public class UserValidator {
     private static final String LAST_NAME_PATTERN = "^[A-Z]{1}[a-z]{2,}";
     private static final String EMAIL_ADDRESS_PATTERN ="^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}+([.][a-zA-Z]{2})?$";
     private static final String MOBILE_NUMBER_PATTERN = "^[0-9]{2}[ ][0-9]{10}$";
-    private static final String PASSWORD_PATTERN = "[a-zA-Z0-9]{8,}";
-    public boolean validateFirstName(String fName)
+    private static final String PASSWORD_PATTERN = "[a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*";
+    public boolean validateFirstName(String firstName)
     {
         Pattern pattern=Pattern.compile(FIRST_NAME_PATTERN);
-        return pattern.matcher(fName).matches();
+        return pattern.matcher(firstName).matches();
     }
 
-    public boolean validateLasttName(String lName)
+    public boolean validateLasttName(String lastName)
     {
         Pattern pattern=Pattern.compile(LAST_NAME_PATTERN);
-        return pattern.matcher(lName).matches();
+        return pattern.matcher(lastName).matches();
     }
 
     public boolean validateEmail(String email)
