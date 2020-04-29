@@ -58,5 +58,17 @@ public class UserRegistrationTest {
         Assert.assertEquals(true,result1);
     }
 
+    @Test
+    public void givenPassword_WhenValid_ShouldReturnTrue() {
+        UserValidator validator = new UserValidate();
+        boolean result=validator.validatePassword("shaikmohammed");
+        Assert.assertEquals(true,result);
+    }
 
+    @Test
+    public void givenPassword_WhenNotValid_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result1=validator.validatePassword("shaik");
+        Assert.assertEquals(true,result1);
+    }
 }
