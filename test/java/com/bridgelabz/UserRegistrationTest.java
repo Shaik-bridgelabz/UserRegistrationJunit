@@ -105,4 +105,17 @@ public class UserRegistrationTest {
         boolean result1=userValidator.validatePassword3("shaikmohammed");
         Assert.assertFalse(result1);
     }
+
+    public void givenPassword_HasExactly_1SpecialCharacter_ShouldReturnTrue() {
+        UserValidator userValidator = new UserValidator();
+        boolean result=userValidator.validatePassword4("Shaikmohammed@123");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPassword_HasMoreThan_1SpecialCharacter_ShouldReturnFalse() {
+        UserValidator userValidator = new UserValidator();
+        boolean result1=userValidator.validatePassword4("shaikmohammed@#113");
+        Assert.assertFalse(result1);
+    }
 }
